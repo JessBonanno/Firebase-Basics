@@ -24,15 +24,17 @@ function useFormValidation(initialState, validate, authenticate) {
       [e.target.name]: e.target.value,
     });
   };
-
+  
   const handleBlur = () => {
     const validationErrors = validate(values);
+    console.log(validationErrors);
     setErrors(validationErrors);
   };
-
+  
   const handleSubmit = e => {
     e.preventDefault();
     const validationErrors = validate(values);
+
     setErrors(validationErrors);
     setIsSubmitting(true);
   };
